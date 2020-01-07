@@ -10,7 +10,7 @@ export const Sidebar = styled.div`
   height: 100vh
 `;
 
-export const TodoList = styled.div`
+export const MainContent = styled.div`
   grid-row: 1;
   height: 100vh
 `;
