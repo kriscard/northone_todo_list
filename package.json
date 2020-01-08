@@ -37,7 +37,9 @@
     ]
   },
   "devDependencies": {
+    "@types/react-datepicker": "^2.10.0",
     "@types/styled-components": "^4.4.2",
+    "react-datepicker": "^2.10.1",
     "react-storage-hooks": "^3.0.3",
     "styled-components": "^4.4.1",
     "styled-icons": "^9.1.0"

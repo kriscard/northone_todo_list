@@ -1,12 +1,16 @@
 import React from 'react'
 
-import { MenuContent } from './Menu.style'
-import MenuList from './cards/MenuList/MenuList.component'
+import { MenuContent, List, Items, InboxIcon } from './Menu.style'
 
 const Menu: React.FC = () => {
   return (
     <MenuContent className="nav">
-      <MenuList />
+      <List>
+        <Items>
+          <InboxIcon />
+          Inbox
+        </Items>
+      </List>
     </MenuContent>
   )
 }
