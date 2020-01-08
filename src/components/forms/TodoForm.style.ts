@@ -1,19 +1,19 @@
-import styled from 'styled-components'
-import DatePicker from 'react-datepicker'
+import styled from 'styled-components';
+import DatePicker from 'react-datepicker';
 
 export const TodoFormContainer = styled.div`
-  width: 80%;
+  width: 100%;
   background-color: rgba(44, 66, 118, 0.06);
   border-color: transparent;
   border-radius: 4px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-`
+`;
 
 export const Form = styled.form`
   width: 60%;
-`
+`;
 
 export const Input = styled.input`
   width: 100%;
@@ -21,12 +21,18 @@ export const Input = styled.input`
   border: none;
   padding: 5px;
   background-color: #f3f4f7;
-`
+
+  &:focus {
+    outline: none;
+  }
+`;
 
 export const CalendarSelector = styled(DatePicker)`
-  width: 100%;
+  width: 90%;
+  height: 24px;
   background-color: #f3f4f7;
   border: none;
   font-style: italic;
   color: grey;
-`
+  text-align: center;
+`;

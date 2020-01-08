@@ -1,22 +1,45 @@
-import React from 'react'
+import React from 'react';
+import dayjs from 'dayjs';
 
-import { TodoContainer } from './Todo.style'
+import {
+  TodoContainer,
+  TodoItems,
+  TodoInfo,
+  TodoStatus,
+  DateFormat,
+  DoneIcon,
+  UpdateIcon,
+  DeleteIcon,
+} from './styles/Todo.style';
 
 interface TodoTypes {
-  todo: { text: string; isCompleted: boolean; date: string }
-  index: number
-  completeTodo: (index: number) => void
-  removeTodo: (index: number) => void
+  todo: { text: string; isCompleted: boolean; todoDate: string; status: string };
+  index: number;
+  completeTodo: (index: number) => void;
+  removeTodo: (index: number) => void;
+  onUserClick: (index: number) => void;
 }
 
-const Todo: React.FC<TodoTypes> = ({ todo, index, completeTodo, removeTodo }) => (
-  <TodoContainer className="todo" style={{ textDecoration: todo.isCompleted ? 'line-through' : '' }}>
-    {todo.text}
-    <div>
-      <button onClick={() => completeTodo(index)}>Complete</button>
-      <button onClick={() => removeTodo(index)}>Remove</button>
-    </div>
+const Todo = ({
+  todo, index, completeTodo, removeTodo, onUserClick,
+}: TodoTypes): JSX.Element => (
+  <TodoContainer className="todo">
+    <TodoItems className="todo__title">
+      {todo.text}
+      <TodoInfo className="todo__info">
+        <DateFormat className="todo__date">{dayjs(todo.todoDate).format('MMM D')}</DateFormat>
+        <TodoStatus
+          className="status"
+          style={todo.status === 'Pending' ? { backgroundColor: '#ffc15e' } : { backgroundColor: '#56d68b' }}
+        >
+          {todo.status}
+        </TodoStatus>
+        <DoneIcon onClick={(): void => completeTodo(index)} />
+        <UpdateIcon onClick={(): void => onUserClick(index)} />
+        <DeleteIcon onClick={(): void => removeTodo(index)} />
+      </TodoInfo>
+    </TodoItems>
   </TodoContainer>
-)
+);
 
-export default Todo
+export default Todo;
