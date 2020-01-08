@@ -10,7 +10,7 @@ interface TodoProps {
   todoId: number;
 }
 
-const TodoDescription = ({ todoId }: TodoProps): JSX.Element => {
+const TodoDescription = ({ todoId }: TodoProps): JSX.Element | null => {
   const { todos, setTodos } = useTodo();
   const [text, setText] = useState<string>('');
   const [description, setDescription] = useState<string>('');
@@ -24,6 +24,10 @@ const TodoDescription = ({ todoId }: TodoProps): JSX.Element => {
     newTodos[index].description = description;
     setTodos(newTodos);
   };
+
+  if (!todo) {
+    return null;
+  }
 
   return (
     <DescriptionContainer>
