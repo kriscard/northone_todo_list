@@ -6,7 +6,7 @@ Northone Challange TodoList using the followed elements:
   - Eslint adapted for TypeScript
   - Deployed on Netlify
 
-#TODO: 
+**#TODO:** 
 The folowed list are all the elements I wish to do if I get more time:
   - Add some test
   - Fix some type issues (I still have 3 any) 
