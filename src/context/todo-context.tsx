@@ -2,11 +2,12 @@ import React from 'react'
 import { useStorageState } from 'react-storage-hooks'
 
 type TodoType = {
+  id: number
   text: string
   isCompleted: boolean
   todoDate: Date
   status: string
-  description: string
+  isEdited?: boolean
 }
 
 type TodoContextValue = {
