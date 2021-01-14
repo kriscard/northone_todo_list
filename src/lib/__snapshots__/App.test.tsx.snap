@@ -1,0 +1,238 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="sc-hBEYos jghMNT wrapper"
+>
+  <div
+    className="sc-fodVxV eYVvyV sidebar"
+  >
+    <div
+      className="sc-crrsfI ffwuNF nav"
+    >
+      <li
+        className="sc-dQppl jxNZuw"
+      >
+        <ul
+          className="sc-bqyKva joiINn"
+        >
+          <svg
+            aria-hidden="true"
+            className="StyledIconBase-ea9ulj-0 cKCFNq sc-kstrdz jAFpMG"
+            fill="none"
+            focusable="false"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline
+              points="22 12 16 12 14 15 10 15 8 12 2 12"
+            />
+            <path
+              d="M5.45 5.11L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11z"
+            />
+          </svg>
+          Inbox
+        </ul>
+      </li>
+    </div>
+  </div>
+  <div
+    className="sc-fFubgz ezsyEi list"
+  >
+    <div
+      className="sc-iqHYGH fKVrMU list"
+    >
+      <div
+        className="title"
+      >
+        <h1>
+          My Todo List
+        </h1>
+      </div>
+      <div
+        className="sc-bdfBwQ bvxKsY container"
+      >
+        <form
+          className="sc-gsTCUz iultuw"
+          onSubmit={[Function]}
+        >
+          <input
+            className="sc-dlfnbm iBZMtt"
+            onChange={[Function]}
+            placeholder="Add your todo"
+            value=""
+          />
+        </form>
+        <div
+          className="date-picker"
+        >
+          |
+          <div
+            className="react-datepicker-wrapper"
+          >
+            <div
+              className="react-datepicker__input-container"
+            >
+              <input
+                className="sc-hKgILt boLOD"
+                disabled={false}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Select a date"
+                readOnly={false}
+                type="text"
+                value="01/14/2021"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="todo"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders correctly 2`] = `
+<div
+  className="sc-iqHYGH fKVrMU list"
+>
+  <div
+    className="title"
+  >
+    <h1>
+      My Todo List
+    </h1>
+  </div>
+  <div
+    className="sc-bdfBwQ bvxKsY container"
+  >
+    <form
+      className="sc-gsTCUz iultuw"
+      onSubmit={[Function]}
+    >
+      <input
+        className="sc-dlfnbm iBZMtt"
+        onChange={[Function]}
+        placeholder="Add your todo"
+        value=""
+      />
+    </form>
+    <div
+      className="date-picker"
+    >
+      |
+      <div
+        className="react-datepicker-wrapper"
+      >
+        <div
+          className="react-datepicker__input-container"
+        >
+          <input
+            className="sc-hKgILt boLOD"
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Select a date"
+            readOnly={false}
+            type="text"
+            value="01/14/2021"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="todo"
+  />
+</div>
+`;
+
+exports[`renders correctly 3`] = `
+<div
+  className="sc-eCssSg lkLLPW todo"
+>
+  <div
+    className="sc-jSgupP fRyoBl title"
+  >
+    test 1
+    <div
+      className="sc-gKsewC eGPWza info"
+    >
+      <div
+        className="sc-fubCfw kPJsTV todo-date"
+      >
+        Jan 14
+      </div>
+      <div
+        className="sc-iBPRYJ ceKkEd status"
+        style={
+          Object {
+            "backgroundColor": "#56d68b",
+          }
+        }
+      >
+        pending
+      </div>
+      <svg
+        aria-hidden="true"
+        className="StyledIconBase-ea9ulj-0 cKCFNq sc-pFZIQ fgucej"
+        fill="currentColor"
+        focusable="false"
+        onClick={[Function]}
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+        />
+      </svg>
+      <svg
+        aria-hidden="true"
+        className="StyledIconBase-ea9ulj-0 cKCFNq sc-jrAGrp gXsPwP"
+        fill="currentColor"
+        focusable="false"
+        onClick={[Function]}
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.707 19.707L18 10.414 13.586 6l-9.293 9.293a1.003 1.003 0 00-.263.464L3 21l5.242-1.03c.176-.044.337-.135.465-.263zM21 7.414a2 2 0 000-2.828L19.414 3a2 2 0 00-2.828 0L15 4.586 19.414 9 21 7.414z"
+        />
+      </svg>
+      <svg
+        aria-hidden="true"
+        className="StyledIconBase-ea9ulj-0 cKCFNq sc-kEjbxe cCxymg"
+        fill="currentColor"
+        focusable="false"
+        onClick={[Function]}
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
