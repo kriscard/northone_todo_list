@@ -1,10 +1,10 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import App from '../App'
-import Todo from '../components/Todo'
-import ItemList from '../components/ItemList'
+import App from './App'
+import Todo from './components/Todo'
+import ItemList from './components/ItemList'
 import renderer from 'react-test-renderer'
-import { TodoProvider } from '../context/todo-context'
+import { TodoProvider } from './context/todo-context'
 
 it('renders without crashing', () => {
   shallow(<App />)

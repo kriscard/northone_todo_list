@@ -40,11 +40,6 @@
         "endOfLine": "auto"
       }
     ],
-    "jest/expect-expect": [
-      "ignore",
-      {
-          "assertFunctionNames": ["expect", "fc.assert"]
-      }
-    ]
+    "jest/expect-expect": "off"
   }
 }
