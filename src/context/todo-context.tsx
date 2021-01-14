@@ -1,19 +1,6 @@
 import React from 'react'
 import { useStorageState } from 'react-storage-hooks'
-
-type TodoType = {
-  id: number
-  text: string
-  isCompleted: boolean
-  todoDate: Date
-  status: string
-  isEdited?: boolean
-}
-
-type TodoContextValue = {
-  todos: TodoType[]
-  setTodos: any
-}
+import { TodoContextValue } from '../helpers/types'
 
 const TodoContext = React.createContext<TodoContextValue | undefined>(undefined)
 

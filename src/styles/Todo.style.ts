@@ -3,7 +3,7 @@ import { Done } from '@styled-icons/material/Done'
 import { Delete } from '@styled-icons/material/Delete'
 import { Pencil } from '@styled-icons/boxicons-solid/Pencil'
 
-export const TodoContainer = styled.div`
+export const Container = styled.div`
   width: 100;
   height: auto;
   border: 1px solid #d8d9e6;
@@ -12,21 +12,21 @@ export const TodoContainer = styled.div`
   border-radius: 4px;
 `
 
-export const TodoItems = styled.div`
+export const Items = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
 `
 
-export const TodoInfo = styled.div`
+export const Info = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 40%;
 `
 
-export const TodoStatus = styled.div`
+export const Status = styled.div`
   border-radius: 4px;
   padding: 4px 12px;
   font-size: 14px;

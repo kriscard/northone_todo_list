@@ -1,32 +1,21 @@
 import React from 'react'
 import dayjs from 'dayjs'
 
-import EditForm from '../forms/EditForm'
-import { useTodo } from '../../context/todo-context'
+import EditForm from './forms/EditForm'
+import { useTodo } from '../context/todo-context'
+import { TodoProps } from '../helpers/types'
 import {
-  TodoContainer,
-  TodoItems,
-  TodoInfo,
-  TodoStatus,
+  Container,
+  Items,
+  Info,
+  Status,
   DateFormat,
   DoneIcon,
   UpdateIcon,
   DeleteIcon
-} from './styles/Todo.style'
+} from '../styles/Todo.style'
 
-interface TodoTypes {
-  todo: {
-    id: number
-    text: string
-    isCompleted: boolean
-    todoDate: string
-    status: string
-    isEdited: boolean
-  }
-  index: number
-}
-
-const Todo = ({ todo, index }: TodoTypes): JSX.Element => {
+const Todo = ({ todo, index }: TodoProps): JSX.Element => {
   const { todos, setTodos } = useTodo()
   const allTodos = [...todos]
 
@@ -47,14 +36,14 @@ const Todo = ({ todo, index }: TodoTypes): JSX.Element => {
   }
 
   return (
-    <TodoContainer className="todo">
-      <TodoItems className="todo__title">
+    <Container className="todo">
+      <Items className="title">
         {todo.isEdited ? <EditForm currentTodo={todo} /> : todo.text}
-        <TodoInfo className="todo__info">
-          <DateFormat className="todo__date">
+        <Info className="info">
+          <DateFormat className="todo-date">
             {dayjs(todo.todoDate).format('MMM D')}
           </DateFormat>
-          <TodoStatus
+          <Status
             className="status"
             style={
               todo.status === 'Pending'
@@ -63,13 +52,13 @@ const Todo = ({ todo, index }: TodoTypes): JSX.Element => {
             }
           >
             {todo.status}
-          </TodoStatus>
+          </Status>
           <DoneIcon onClick={(): void => completeTodo()} />
           <UpdateIcon onClick={(): void => editTodo()} />
           <DeleteIcon onClick={(): void => removeTodo(index)} />
-        </TodoInfo>
-      </TodoItems>
-    </TodoContainer>
+        </Info>
+      </Items>
+    </Container>
   )
 }
 

@@ -1,11 +1,11 @@
 import React from 'react'
-
-import TodoForm from '../forms/TodoForm'
+import NewTodoForm from './forms/NewTodoForm'
 import Todo from './Todo'
-import { useTodo } from '../../context/todo-context'
-import { TodoListContainer } from './styles/TodoList.style'
+import { useTodo } from '../context/todo-context'
+import { Container } from '../styles/ItemList.style'
+import { TodoTypes } from '../helpers/types'
 
-const ItemsList = (): JSX.Element => {
+const ItemsList: React.FC = (): JSX.Element => {
   const { todos, setTodos } = useTodo()
 
   const addTodo = (
@@ -31,18 +31,18 @@ const ItemsList = (): JSX.Element => {
   }
 
   return (
-    <TodoListContainer className="todo-list">
+    <Container className="list">
       <div className="title">
         <h1>My Todo List</h1>
       </div>
-      <TodoForm addTodo={addTodo} />
+      <NewTodoForm addTodo={addTodo} />
       <div className="todo">
         {todos &&
-          todos.map((todo: any, index: number) => (
+          todos.map((todo: TodoTypes, index: number) => (
             <Todo key={todo.id} index={index} todo={todo} />
           ))}
       </div>
-    </TodoListContainer>
+    </Container>
   )
 }
 

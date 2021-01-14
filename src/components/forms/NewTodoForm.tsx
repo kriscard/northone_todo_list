@@ -6,7 +6,7 @@ import {
   Input,
   TodoFormContainer,
   CalendarSelector
-} from './TodoForm.style'
+} from '../../styles/TodoForm.style'
 
 interface PropsType {
   addTodo: (
@@ -19,7 +19,7 @@ interface PropsType {
   ) => void
 }
 
-const TodoForm = ({ addTodo }: PropsType): JSX.Element => {
+const NewTodoForm = ({ addTodo }: PropsType): JSX.Element => {
   const [value, setValue] = useState<string>('')
   const [startDate, setStartDate] = useState(new Date())
 
@@ -58,4 +58,4 @@ const TodoForm = ({ addTodo }: PropsType): JSX.Element => {
   )
 }
 
-export default TodoForm
+export default NewTodoForm

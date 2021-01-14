@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { MenuContent, List, Items, InboxIcon } from './Menu.style'
+import { MenuContent, List, Items, InboxIcon } from '../../styles/Menu.style'
 
 const Menu: React.FC = () => (
   <MenuContent className="nav">

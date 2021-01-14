@@ -16,8 +16,3 @@ export const MainContent = styled.div`
   grid-row: 1;
   height: 100vh;
 `
-
-export const Description = styled.div`
-  grid-row: 1;
-  height: 100vh;
-`
