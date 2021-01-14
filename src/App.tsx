@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-import TodoList from './components/todo/TodoList.component';
-import Menu from './components/nav/Menu.component';
-import TodoDescription from './components/todo/TodoDescription.component';
-import {
-  Wrapper, Sidebar, MainContent, Description,
-} from './App.style';
+import TodoList from './components/todo/TodoList'
+import Menu from './components/nav/Menu'
+import TodoDescription from './components/todo/TodoDescription'
+import { Wrapper, Sidebar, MainContent, Description } from './App.style'
 
 const App: React.FC = () => {
-  const [todoId, setTodoId] = useState<number | undefined>(undefined);
+  const [todoId, setTodoId] = useState<number | undefined>(undefined)
 
   return (
     <Wrapper className="wrapper">
@@ -18,7 +16,7 @@ const App: React.FC = () => {
       <MainContent className="todo-list">
         <TodoList
           onUserClick={(id: number): void => {
-            setTodoId(id);
+            setTodoId(id)
           }}
         />
       </MainContent>
@@ -26,7 +24,7 @@ const App: React.FC = () => {
         {todoId && <TodoDescription todoId={todoId} />}
       </Description>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default App;
+export default App

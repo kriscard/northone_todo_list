@@ -1,33 +1,37 @@
-import React from 'react';
-import { useLocalStorageState } from 'react-storage-hooks';
+import React from 'react'
+import { useStorageState } from 'react-storage-hooks'
 
 type TodoType = {
-  text: string;
-  isCompleted: boolean;
-  todoDate: Date;
-  status: string;
-  description: string;
+  text: string
+  isCompleted: boolean
+  todoDate: Date
+  status: string
+  description: string
 }
 
 type TodoContextValue = {
-  todos: TodoType[] | null;
-  setTodos: any;
+  todos: TodoType[]
+  setTodos: any
 }
 
-const TodoContext = React.createContext<TodoContextValue | undefined>(undefined);
+const TodoContext = React.createContext<TodoContextValue | undefined>(undefined)
 
 type ProviderProps = {
-  value?: TodoContextValue;
-  children: React.ReactNode;
+  value?: TodoContextValue
+  children: React.ReactNode
 }
 
 function TodoProvider(props: ProviderProps): JSX.Element {
-  const [todos, setTodos, writeError] = useLocalStorageState('todos', null);
+  const [todos, setTodos, writeError] = useStorageState(
+    localStorage,
+    'todos',
+    []
+  )
 
   const value: TodoContextValue = {
     todos,
-    setTodos,
-  };
+    setTodos
+  }
 
   return (
     <>
@@ -39,21 +43,21 @@ function TodoProvider(props: ProviderProps): JSX.Element {
         </pre>
       )}
     </>
-  );
+  )
 }
 
 function useTodo(): TodoContextValue {
-  const context = React.useContext(TodoContext);
+  const context = React.useContext(TodoContext)
   if (!context) {
-    throw new Error('useTodo must be used within a TodoProvider');
+    throw new Error('useTodo must be used within a TodoProvider')
   }
 
-  const { todos, setTodos } = context;
+  const { todos, setTodos } = context
   return {
     todos,
-    setTodos,
-  };
+    setTodos
+  }
 }
 
-export { TodoProvider, useTodo };
-export default TodoContext;
+export { TodoProvider, useTodo }
+export default TodoContext

@@ -1,18 +1,16 @@
-import React from 'react';
+import React from 'react'
 
-import {
-  MenuContent, List, Items, InboxIcon,
-} from './Menu.style';
+import { MenuContent, List, Items, InboxIcon } from './Menu.style'
 
 const Menu: React.FC = () => (
   <MenuContent className="nav">
     <List>
       <Items>
         <InboxIcon />
-          Inbox
+        Inbox
       </Items>
     </List>
   </MenuContent>
-);
+)
 
-export default Menu;
+export default Menu

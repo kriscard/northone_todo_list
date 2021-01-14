@@ -1,32 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-import { useTodo } from '../../context/todo-context';
+import { useTodo } from '../../context/todo-context'
 import {
-  DescriptionContainer, Title, TextBlock, Input, Button,
-} from './styles/TodoDescription.style';
-
+  DescriptionContainer,
+  Title,
+  TextBlock,
+  Input,
+  Button
+} from './styles/TodoDescription.style'
 
 interface TodoProps {
-  todoId: number;
+  todoId: number
 }
 
 const TodoDescription = ({ todoId }: TodoProps): JSX.Element | null => {
-  const { todos, setTodos } = useTodo();
-  const [text, setText] = useState<string>('');
-  const [description, setDescription] = useState<string>('');
+  const { todos, setTodos } = useTodo()
+  const [text, setText] = useState<string>('')
+  const [description, setDescription] = useState<string>('')
 
-  const arrayOfTodos = [...todos];
-  const todo = arrayOfTodos[todoId];
+  const arrayOfTodos = [...todos]
+  const todo = arrayOfTodos[todoId]
 
   const handleSubmit = (index: number): void => {
-    const newTodos = [...todos];
-    newTodos[index].text = text;
-    newTodos[index].description = description;
-    setTodos(newTodos);
-  };
+    const newTodos = [...todos]
+    newTodos[index].text = text
+    newTodos[index].description = description
+    setTodos(newTodos)
+  }
 
   if (!todo) {
-    return null;
+    return null
   }
 
   return (
@@ -41,7 +44,13 @@ const TodoDescription = ({ todoId }: TodoProps): JSX.Element | null => {
 
       <form className="todo-description" name="todo">
         <div className="todo-description__title">
-          {todo && <Input value={text} onChange={(e): void => setText(e.target.value)} placeholder="new title" />}
+          {todo && (
+            <Input
+              value={text}
+              onChange={(e): void => setText(e.target.value)}
+              placeholder="new title"
+            />
+          )}
         </div>
         <div className="todo-description__content">
           {todo && (
@@ -57,7 +66,7 @@ const TodoDescription = ({ todoId }: TodoProps): JSX.Element | null => {
         </Button>
       </form>
     </DescriptionContainer>
-  );
-};
+  )
+}
 
-export default TodoDescription;
+export default TodoDescription

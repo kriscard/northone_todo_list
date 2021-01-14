@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const DescriptionContainer = styled.div`
   padding: 24px;
-`;
+`
 
 export const Title = styled.div`
   font-weight: 700;
@@ -15,7 +15,7 @@ export const Title = styled.div`
   word-wrap: break-word;
   color: rgba(0, 0, 0, 0.85);
   margin-left: 5px;
-`;
+`
 
 export const TextBlock = styled.div`
   font-size: 12px;
@@ -27,7 +27,7 @@ export const TextBlock = styled.div`
   word-wrap: break-word;
   color: rgba(0, 0, 0, 0.85);
   margin-left: 5px;
-`;
+`
 
 export const Input = styled.input`
   width: 100%;
@@ -40,7 +40,7 @@ export const Input = styled.input`
   &:focus {
     outline: none;
   }
-`;
+`
 
 export const Button = styled.button`
   border-radius: 4px;
@@ -50,5 +50,5 @@ export const Button = styled.button`
   color: #fff;
   font-weight: 600;
   line-height: 18px;
-  background-color: #666b8c
-`;
+  background-color: #666b8c;
+`
