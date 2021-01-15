@@ -1,6 +1,11 @@
-LINK: https://competent-chandrasekhar-f1d274.netlify.app
+## Production 
+A production-version is available on Netlify:
+https://competent-chandrasekhar-f1d274.netlify.app
 
-For the Northone Challenge TodoList I used the elements belows:
+## Description
+
+For the Northone Challenge TodoList, I used the elements belows:
+```
   - Create-react-app with Typescript template
   - React hooks
   - React contexts for the state of the Todo (all the todo are stored inside the localstorage)
@@ -8,3 +13,18 @@ For the Northone Challenge TodoList I used the elements belows:
   - Eslint adapted for TypeScript
   - Deployed on Netlify
   - Jest test
+ ```
+
+## How to run the app in local
+To build a local-version:
+
+```
+yarn install
+yarn start
+```
+
+## To run the test
+
+```
+yarn test
+```
