@@ -5,11 +5,13 @@ export interface TodoTypes {
   todoDate: Date
   status: string
   isEdited?: boolean
+  isFiltered: boolean
+  isFilteredBy: string
 }
 
 export interface TodoContextValue {
   todos: TodoTypes[]
-  setTodos: any
+  dispatch: React.Dispatch<Actions>
 }
 
 export interface TodoProps {
@@ -20,3 +22,10 @@ export interface TodoProps {
 export interface EditFormProps {
   currentTodo: TodoTypes
 }
+
+export type ProviderProps = {
+  value?: TodoContextValue
+  children: React.ReactNode
+}
+
+export type Actions = Record<string, any>

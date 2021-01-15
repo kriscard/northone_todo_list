@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Inbox } from '@styled-icons/feather/Inbox'
 
 export const MenuContent = styled.div`
   height: 100%;
@@ -18,8 +17,9 @@ export const Items = styled.ul`
   align-items: center;
 `
 
-export const InboxIcon = styled(Inbox)`
-  height: 30px;
-  width: 30px;
-  margin-right: 5px;
+export const FlexBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 `

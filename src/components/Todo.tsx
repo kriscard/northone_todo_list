@@ -2,7 +2,12 @@ import React from 'react'
 import dayjs from 'dayjs'
 
 import EditForm from './forms/EditForm'
-import { useTodo } from '../context/todo-context'
+import {
+  completeTodo,
+  useTodo,
+  removeTodo,
+  editTodo
+} from '../context/todo-context'
 import { TodoProps } from '../helpers/types'
 import {
   Container,
@@ -16,24 +21,7 @@ import {
 } from '../styles/Todo.style'
 
 const Todo = ({ todo, index }: TodoProps): JSX.Element => {
-  const { todos, setTodos } = useTodo()
-  const allTodos = [...todos]
-
-  const completeTodo = (): void => {
-    todo.isCompleted = true
-    todo.status = 'Done'
-    setTodos(allTodos)
-  }
-
-  const editTodo = (): void => {
-    todo.isEdited = true
-    setTodos(allTodos)
-  }
-
-  const removeTodo = (index: number): void => {
-    allTodos.splice(index, 1)
-    setTodos(allTodos)
-  }
+  const { dispatch } = useTodo()
 
   return (
     <Container className="todo">
@@ -53,9 +41,9 @@ const Todo = ({ todo, index }: TodoProps): JSX.Element => {
           >
             {todo.status}
           </Status>
-          <DoneIcon onClick={(): void => completeTodo()} />
-          <UpdateIcon onClick={(): void => editTodo()} />
-          <DeleteIcon onClick={(): void => removeTodo(index)} />
+          <DoneIcon onClick={(): void => dispatch(completeTodo(index))} />
+          <UpdateIcon onClick={(): void => dispatch(editTodo(index))} />
+          <DeleteIcon onClick={(): void => dispatch(removeTodo(index))} />
         </Info>
       </Items>
     </Container>

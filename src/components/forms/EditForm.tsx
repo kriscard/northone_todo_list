@@ -1,22 +1,17 @@
 import React, { useState } from 'react'
 
 import { Form, Input } from '../../styles/TodoForm.style'
-import { useTodo } from '../../context/todo-context'
+import { useTodo, updateTodo } from '../../context/todo-context'
 import { EditFormProps } from '../../helpers/types'
 
 const EditForm = ({ currentTodo }: EditFormProps): JSX.Element => {
-  const { todos, setTodos } = useTodo()
+  const { todos, dispatch } = useTodo()
   const [value, setValue] = useState('')
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
-
     const index = todos.indexOf(currentTodo)
-    todos[index].text = value
-    todos[index].isEdited = false
-    const newTodos = [...new Set(todos)]
-
-    setTodos(newTodos)
+    dispatch(updateTodo(index, value))
   }
 
   return (

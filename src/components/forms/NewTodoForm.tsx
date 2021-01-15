@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import 'react-datepicker/dist/react-datepicker.css'
+import { useTodo, addTodo } from '../../context/todo-context'
 
 import {
   Form,
@@ -8,19 +9,9 @@ import {
   CalendarSelector
 } from '../../styles/TodoForm.style'
 
-interface PropsType {
-  addTodo: (
-    id: number,
-    value: string,
-    isCompleted: boolean,
-    todoDate: Date,
-    status: string,
-    isEdited: boolean
-  ) => void
-}
-
-const NewTodoForm = ({ addTodo }: PropsType): JSX.Element => {
+const NewTodoForm = (): JSX.Element => {
   const [value, setValue] = useState<string>('')
+  const { dispatch } = useTodo()
   const [startDate, setStartDate] = useState(new Date())
 
   const id = Math.floor(Math.random() * 1000) + 1
@@ -28,10 +19,23 @@ const NewTodoForm = ({ addTodo }: PropsType): JSX.Element => {
   const todoDate = startDate
   const status = 'Pending'
   const isEdited = false
+  const isFiltered = false
+  const isFilteredBy = ''
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    addTodo(id, value, isCompleted, todoDate, status, isEdited)
+    const text = value
+    const newTodo = {
+      id,
+      text,
+      isCompleted,
+      todoDate,
+      status,
+      isEdited,
+      isFiltered,
+      isFilteredBy
+    }
+    dispatch(addTodo(newTodo))
     setValue('')
   }
 
