@@ -13,6 +13,8 @@ For the Northone Challenge TodoList, I used the elements belows:
   - Eslint adapted for TypeScript
   - Deployed on Netlify
   - Jest test
+
+For the record, the CSS wasn't my main focus
  ```
 
 ## How to run the app in local
