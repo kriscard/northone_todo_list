@@ -33,8 +33,12 @@ export function completeTodo(index: number): Actions {
 export function editTodo(index: number): Actions {
   return { type: EDIT_TODO, index }
 }
-export function updateTodo(index: number, text: string): Actions {
-  return { type: UPDATE_TODO, index, text }
+export function updateTodo(
+  index: number,
+  title: string,
+  description: string
+): Actions {
+  return { type: UPDATE_TODO, index, title, description }
 }
 export function clearAllFilters(): Actions {
   return { type: CLEAR_ALL_FILTERS }
@@ -70,7 +74,8 @@ export function todoReducer(
       return [...uniqTodos]
     case UPDATE_TODO:
       const updatedTodo: TodoTypes = todos[action.index]
-      updatedTodo.text = action.text
+      updatedTodo.title = action.title
+      updatedTodo.description = action.description
       updatedTodo.isEdited = false
       return [...todos]
     case REMOVE_TODO:
@@ -87,7 +92,6 @@ export function todoReducer(
         todo.isFiltered = true
         todo.isFilteredBy = 'Pending'
       })
-
       todosInDone.map((todo) => {
         todo.isFiltered = false
         todo.isFilteredBy = ''

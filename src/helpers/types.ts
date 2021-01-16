@@ -1,12 +1,13 @@
 export interface TodoTypes {
   id: number
-  text: string
+  title: string
   isCompleted: boolean
   todoDate: Date
   status: string
   isEdited?: boolean
   isFiltered: boolean
   isFilteredBy: string
+  description: string
 }
 
 export interface TodoContextValue {

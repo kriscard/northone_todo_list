@@ -26,7 +26,14 @@ const Todo = ({ todo, index }: TodoProps): JSX.Element => {
   return (
     <Container className="todo">
       <Items className="title">
-        {todo.isEdited ? <EditForm currentTodo={todo} /> : todo.text}
+        {todo.isEdited ? (
+          <EditForm currentTodo={todo} />
+        ) : (
+          <div>
+            <p>{todo.title}</p>
+            <p>{todo.description}</p>
+          </div>
+        )}
         <Info className="info">
           <DateFormat className="todo-date">
             {dayjs(todo.todoDate).format('MMM D')}

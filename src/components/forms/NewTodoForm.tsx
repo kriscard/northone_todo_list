@@ -6,11 +6,16 @@ import {
   Form,
   Input,
   TodoFormContainer,
-  CalendarSelector
+  CalendarSelector,
+  CalendarContainer,
+  FormButton,
+  InputContainer,
+  FormItems
 } from '../../styles/TodoForm.style'
 
 const NewTodoForm = (): JSX.Element => {
-  const [value, setValue] = useState<string>('')
+  const [todoTitle, setTodoTitle] = useState<string>('')
+  const [todoDescription, setTodoDescription] = useState<string>('')
   const { dispatch } = useTodo()
   const [startDate, setStartDate] = useState(new Date())
 
@@ -24,40 +29,57 @@ const NewTodoForm = (): JSX.Element => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const text = value
+    const title = todoTitle
+    const description = todoDescription
     const newTodo = {
       id,
-      text,
+      title,
       isCompleted,
       todoDate,
       status,
       isEdited,
       isFiltered,
-      isFilteredBy
+      isFilteredBy,
+      description
     }
     dispatch(addTodo(newTodo))
-    setValue('')
+    setTodoTitle('')
+    setTodoDescription('')
   }
 
   return (
     <TodoFormContainer className="container">
       <Form onSubmit={handleSubmit}>
-        <Input
-          value={value}
-          onChange={(e): void => setValue(e.target.value)}
-          placeholder="Add your todo"
-        />
+        <FormItems>
+          <InputContainer>
+            <Input
+              value={todoTitle}
+              key="todo-title"
+              onChange={(e): void => setTodoTitle(e.target.value)}
+              placeholder="Add your title"
+            />
+            <Input
+              value={todoDescription}
+              key="todo-description"
+              onChange={(e): void => setTodoDescription(e.target.value)}
+              placeholder="Add your description"
+            />
+          </InputContainer>
+          <CalendarContainer className="date-picker">
+            |
+            <CalendarSelector
+              onChange={(date: Date): void => {
+                setStartDate(date)
+              }}
+              selected={startDate}
+              placeholderText="Select a date"
+            />
+          </CalendarContainer>
+        </FormItems>
+        <FormButton variant="contained" color="primary" type="submit">
+          Add
+        </FormButton>
       </Form>
-      <div className="date-picker">
-        |
-        <CalendarSelector
-          onChange={(date: Date): void => {
-            setStartDate(date)
-          }}
-          selected={startDate}
-          placeholderText="Select a date"
-        />
-      </div>
     </TodoFormContainer>
   )
 }

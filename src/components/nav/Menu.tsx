@@ -26,7 +26,8 @@ const Menu: React.FC = () => {
                 margin: '10px',
                 textAlign: 'center',
                 padding: 'auto',
-                width: '60%'
+                width: '60%',
+                cursor: 'pointer'
               }}
               onClick={(): void => dispatch(filterByPendingStatus('Pending'))}
             >
@@ -38,7 +39,8 @@ const Menu: React.FC = () => {
                 backgroundColor: '#56d68b',
                 margin: '10px',
                 textAlign: 'center',
-                width: '60%'
+                width: '60%',
+                cursor: 'pointer'
               }}
               onClick={(): void => dispatch(filterByDoneStatus('Done'))}
             >
@@ -50,7 +52,8 @@ const Menu: React.FC = () => {
                 backgroundColor: '#dddddd',
                 margin: '10px',
                 textAlign: 'center',
-                width: '60%'
+                width: '60%',
+                cursor: 'pointer'
               }}
               onClick={(): void => dispatch(clearAllFilters())}
             >

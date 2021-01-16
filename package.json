@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.2",
     "@styled-icons/boxicons-solid": "^10.23.0",
     "@styled-icons/feather": "^10.18.0",
     "@styled-icons/material": "^10.23.0",
@@ -20,6 +21,7 @@
     "enzyme-adapter-react-16": "^1.15.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-overlays": "^0.9.3",
     "react-scripts": "4.0.1",
     "react-test-renderer": "^17.0.1",
     "styled-icons": "^10.25.0",
